@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Example with Click Counter</title>
+    <script src="../../build/es5-shim.min.js"></script>
+    <script src="../../build/es5-sham.min.js"></script>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="../../build/babel-core.js"></script>
+  </head>
+  <body>
+    <div id="message" align="center"></div>
+<div id="example" align="center"></div>
+<div id="example1" align="center"></div>
+
+<div id="helloworld" align="center"></div>
+    <script type="text/babel">
+      var Counter = React.createClass({
+        getInitialState: function () {
+          return { clickCount: 0 };
+        },
+        handleClick: function () {
+          this.setState(function(state) {
+            return {clickCount: state.clickCount + 1};
+          });
+        },
+        render: function () {
+          return (<h2 onClick={this.handleClick}>Click me! Number of clicks: {this.state.clickCount}</h2>);
+        }
+      });
+      ReactDOM.render(
+        <Counter />,
+        document.getElementById('message')
+      );
+      
+      var CheckLink = React.createClass({
+  render: function() {
+    // This takes any props passed to CheckLink and copies them to <a>
+    return <a href={this.props.href}>{'√ '}{this.props.children}</a>;
+  }
+});
+
+ReactDOM.render(
+  <CheckLink href="/checked.html" title="fiii">
+    <p>asdf</p>
+  </CheckLink>,
+  document.getElementById('example')
+);
+var Input = React.createClass({
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function () {
+    var value = this.state.value;
+    return (
+      <div>
+        <input type="text"  onChange={this.handleChange} value={value} className={value}/>
+        <p>{value}</p>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(<Input/>, document.getElementById('example1'));
+
+var Hello = React.createClass({
+  getInitialState: function () {
+    return {
+      opacity: 1.0
+    };
+  },
+
+  componentDidMount: function () {
+    this.timer = setInterval(function () {
+      var opacity = this.state.opacity;
+      opacity -= .05;
+      if (opacity < 0.1) {
+        opacity = 1.0;
+      }
+      this.setState({
+        opacity: opacity
+      });
+    }.bind(this), 400);
+  },
+
+  render: function () {
+    return (
+      <div style={{opacity: this.state.opacity}}>
+        Hello {this.props.name}
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Hello name="world"/>,
+  document.getElementById('helloworld')
+);
+    </script>
+  </body>
+</html>
