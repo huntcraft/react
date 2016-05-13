@@ -7,93 +7,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/bootstrap.min.3.6.css">
   <link rel="stylesheet/less" href="/css/demo-work.less">
-  <link rel="stylesheet" href="http://fonts.useso.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/css/material-icons.css">
+  <!-- <link rel="stylesheet" href="http://fonts.useso.com/icon?family=Material+Icons"> -->
+  <link rel="stylesheet" href="/css/perfect-scrollbar.min.css">
+  <style>
+  #tk{
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    right: 0;
+  }
+  .sso{
+    border: 1px solid #eee;
+    height: 80px;
+  }
+  </style>
 </head>
 <body>
   <div id="react-root" class="app-root">
     <div id="palyground" class="md-container-24">
-      <div id="tpl-block">
-        <div class="table-container z-height-1">
-          <table class="md-table">
-            <thead>
-              <tr>
-                <th class="md-thead-1">#</th>
-                <th class="md-thead-2">说明</th>
-                <th class="md-thead-3">角色</th>
-                <th class="md-thead-2">时间</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-              <tr>
-                <td  class="md-thead-1">
-                  <input type="checkbox" value="sdf" />
-                </td>
-                <td class="md-thead-2">枯下地要</td>
-                <td class="md-thead-3">村下</td>
-                <td class="md-thead-2">2016-06-01 08:30:20</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-footer">
-            asdfsdfsd asdf <i class="material-icons">&#xE314;</i><i class="material-icons">&#xE315;</i>
+      <!-- <div id="tpl-canvas">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4"><i class="material-icons">&#xE8BE;</i></div>
+            <div class="col-md-8">
+              <p>1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <p>5</p>
+              <p>6</p>
+              <p>7</p>
+              <p>8</p>
+              <p>8</p>
+              <p>9</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              asdf
+            </div>
           </div>
-        </div><div class="tool-button">
-          <i class="material-icons">add_circle</i>
         </div>
-        <!-- <div class="table-toolbar z-height-1">
-          asdfsdf sadfsdfsdf
-        </div> -->
+      </div>
+      <div id="tpl-tool" class="">
+        <div class="tpl-line-1">
+          <span class="table-part-7">1</span><span class="table-part-3 text-right"><i class="material-icons">&#xE5CD;</i></span>
+        </div>
+        <div class="tpl-line-1">
+          <span class="table-part-7">2</span><span class="table-part-3 text-right"><i class="material-icons">&#xE5CD;</i></span>
+        </div>
+        <div class="tpl-line-1">
+          <span class="table-part-7">3</span><span class="table-part-3 text-right"><i class="material-icons">&#xE5CD;</i></span>
+        </div>
+        <div class="tpl-line-1">
+          <span class="table-part-12"><i class="material-icons">&#xE145;</i></span>
+        </div>
+        <div class="tpl-line-input">
+          <input type="text" placeholder="备注" >
+        </div>
+        <div class="tpl-line-input">
+          <input type="text" placeholder="备注" >
+        </div>
+        <div class="tpl-line-button text-right">
+          <div class="md-button md-btn-text">保存</div>
+        </div>
+      </div> -->
+      <div id="tpl-block">
+        <div class="table-container">
+          <div class="table-header  z-height-1">
+            <span class="table-part-7">模板列表</span><span class="table-part-3 text-right">
+              <i class="material-icons">&#xE146;</i>
+            </span>
+          </div>
+          <div class="table-main z-height-1">
+            <table class="md-table">
+              <thead>
+                <tr>
+                  <th class="md-thead-2">备注</th>
+                  <th class="md-thead-2">时间</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-2" title="2016-06-01 08:30:20">2016-06-01</td>
+                </tr>
+                <!-- <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr>
+                <tr>
+                  <td  class="md-thead-1">
+                    <input type="checkbox" value="sdf" />
+                  </td>
+                  <td class="md-thead-2">枯下地要</td>
+                  <td class="md-thead-3">村下</td>
+                  <td class="md-thead-2">2016-06-01 08:30:20</td>
+                </tr> -->
+              </tbody>
+            </table>
+            <div class="table-footer">
+              <span class="table-part-3">
+                <i class="material-icons">&#xE5CD;</i>
+              </span><span class="table-part-7 text-right">
+                <i class="material-icons">&#xE314;</i><i class="material-icons">&#xE315;</i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="canvas-container">
+  <div style="width:591px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12"><div class="tpl-preview-1">header</div></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"><div class="tpl-preview-2"></div></div>
+        <div class="col-md-8"><div class="tpl-preview-2"></div></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><div class="tpl-preview-2"></div></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><div class="tpl-preview-2"></div></div>
+        <div class="col-md-6">
+          <div class="tpl-preview-2"></div>
+        </div>
+      </div>
+      <div class="row"><div class="col-md-12"><div class="tpl-preview-1">footer</div></div></div>
+      <div class="row">
+        <div class="col-md-12">
+          <span class="md-button md-btn-text md-btn-primary">配置</span>
+          <span class="md-button md-btn-text">修改</span>
+        </div>
+        </div>
       </div>
     </div>
-    <aside id="navbarLeft" class="z-height-4">
+  </div>
+</div>
+      </div>
+    </div>
+    <div id="comp_bar">
+      <div id="compbar-space">
+        <i class="material-icons">&#xE313;</i>
+      </div>
+      <div id="comps">
+        sadfsadf
+      </div>
+    </div>
+    <!-- <div id="tk">
+      sadfsdf
+    </div> -->
+    <aside id="navbarLeft" class="z-height-4 nbarleft-min">
+      <div class="nl-space"></div>
+      <div class="nl-content">
       <div id="nLeft-title">
         <div id="nLeft-logo" class="md-container-16">
           <i class="img-block-48"></i>
@@ -104,32 +241,97 @@
         <ul class="md-nav">
           <li class="active">
             <a href="#">
-              <i class="img-inline-24"></i>
+              <i class="material-icons">&#xE8F1;</i>
               <span class="md-icon-title">模板</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="img-inline-24"></i>
+              <i class="material-icons">&#xE8B9;</i>
               <span class="md-icon-title">配置</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="img-inline-24"></i>
+              <i class="material-icons">&#xE87B;</i>
               <span class="md-icon-title">组件</span>
             </a>
           </li>
         </ul>
       </nav>
+      </div>
     </aside>
-    <aside id="toolbar" class="md-container-16"></aside>
+    <aside id="toolbar" class="md-container-16">
+      <div style=""><p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>6</p>
+      <p>7</p>
+      <p>8</p>
+      <p>8</p>
+      <p>9</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p>
+      <p>1</p></div>
+    </aside>
   </div>
 <script src="/js/less.min.js"></script>
+<script>
+  var tpl_draw = (function () {
+    var canv
+      , ctx
+      , spacingU = 10
+      , spacingL = 20
+      , unitW = 50
+      , unitH = 100
+      , color = '#263238'
+
+    function init(container) {
+      canv = document.getElementById(container)
+      ctx = canv.getContext('2d')
+      ctx.strokeStyle = color
+    }
+
+    function draw(data) {
+      Array.prototype.forEach.call(document.getElementsByClassName('canvas-container')[0].getElementsByClassName('canvas-part'),function (item) {
+        item.style.display = 'block'
+      })
+      // document.getElementsByClassName('canvas-container')[0].getElementsByClassName('canvas-part').forEach(function (item) {
+      //   item.style.display = 'block'
+      // })
+      canv.height = data.body.length * (unitH + spacingL) - spacingL + 1
+      data.body.forEach(function (item, i) {
+        var passX = 0
+          , offsetY = i * (unitH + spacingL)
+        item.forEach(function (unit, k) {
+          //console.log(unit, i, k)
+          ctx.strokeRect(passX * unitW + 0.5, offsetY + 0.5,unit * unitW - spacingU, unitH);
+          passX = passX + unit
+        })
+      })
+    }
+
+    return {init : init, draw : draw}
+  })()
+</script>
 <!-- <script src="/build/react.js"></script>
 <script src="/build/react-dom.js"></script>
 <script src="/build/babel-core.js"></script>
 <script src="/js/ievent.js"></script>
 <script src="/js/jquery-2.2.0.min"></script> -->
+<script src="/js/perfect-scrollbar.js"></script>
+<script>
+var container = document.getElementById('toolbar');
+Ps.initialize(container);
+</script>
 </body>
 </html>

@@ -45,16 +45,44 @@
 body{
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
-.app-root{
+#react-root{
   min-width: 1430px;
+}
+.app-root{
   padding-left: 240px;
 }
+.nl-space{
+  width: 8px;
+  height: 100%;
+  display: none;
+  position: absolute;
+  right: -8px;
+}
 #navbarLeft{
-  height: 900px;
+  //height: 900px;
   position: fixed;
   top: 0;
   left: 0;
-
+  bottom: 0;
+  background: #fff;
+  transition: left 0.2s ease-out;
+  transform: translate3d(0,0,0);
+  &.nbarleft-min{
+    &:hover{
+      left : 0;
+    }
+    left: -240px;
+  }
+}
+.nbarleft-min{
+  &:hover{
+    .nl-space{
+      display: none;
+    }
+  }
+  .nl-space{
+    display: block;
+  }
 }
 .md-container-16{
   padding: 16px;
@@ -120,16 +148,39 @@ body{
   box-shadow: 0 1px 6px 0px rgba(0,0,0,0.12),0 1px 6px 0px rgba(0,0,0,0.12);
 }
 #tpl-block{
-  width: 900px;
-  margin: 0 auto;
+  // width: 900px;
+  // margin: 0 auto;
 }
 .table-container{
   border-radius: 4px;
   display: inline-block;
   vertical-align: top;
 }
+.table-header{
+  line-height: 24px;
+  padding: 20px 24px;
+  margin-bottom: 1px;
+  .table-header-title{
+    width: 70%;
+    text-align: left;
+  }
+}
+.table-part-3{
+  display: inline-block;
+  width: 30%;
+}
+.table-part-7{
+  display: inline-block;
+  width: 70%;
+}
+.text-right{
+  text-align: right;
+}
 .md-table{
   line-height: 16px;
+  tr>td:first-child,tr>th:first-child{
+    padding-left: 24px;
+  }
   tr + tr {
     border-top: 1px solid @Grey_200;
   }
@@ -158,13 +209,31 @@ body{
   vertical-align: top;
 }
 .table-footer{
-  text-align: right;
+  //text-align: right;
   border-top: 1px solid @Grey_200;
   line-height: 24px;
   padding: 16px 24px;
-  .material-icons{
-    vertical-align: top;
+}
+.md-button{
+  display: inline-block;
+  width: 88px;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+}
+.md-btn-text{
+  &:hover{
+    box-shadow: 0 1px 6px 0px rgba(0,0,0,0.12),0 1px 6px 0px rgba(0,0,0,0.12);
   }
+}
+.md-btn-primary{
+  color: @Teal_900;
+}
+.v-align-top{
+  vertical-align: top;
+}
+.material-icons{
+  vertical-align: top;
 }
 .tool-button{
   display: inline-block;
@@ -178,7 +247,6 @@ body{
 }
 .md-thead-1{
   width: 61px;
-  padding-left: 24px;
   padding-right: 24px;
 }
 .md-thead-2{
@@ -186,6 +254,20 @@ body{
 }
 .md-thead-3{
   padding-right: 56px;
+  width: 184px;
+}
+.canvas-container{
+  margin-left: 24px;
+  display: inline-block;
+  vertical-align: top;
+}
+#preview{
+  margin: 20px 0;
+}
+.canvas-part{
+  border: 1px solid @Grey_200;
+  line-height: 60px;
+  text-align: center;
 }
 .img-inline-24{
   &:before{
@@ -204,7 +286,7 @@ body{
 
 
 .z-height-4{
-  position: relative;
+  //position: relative;
 }
 .z-height-4:after{
   content: "";
@@ -216,6 +298,105 @@ body{
   box-shadow: 0 1px 12px 2px rgba(0,0,0,0.24); //,0 1px 6px 0 rgba(0,0,0,0.12)
   z-index: -1;
 }
+.table-part-12{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+/******/
+
+#tpl-canvas{
+  width: 840px;
+  display: inline-block;
+  vertical-align: top;
+}
+#tpl-tool{
+  display: inline-block;
+  margin-left: 24px;
+  width: 280px;
+  vertical-align: top;
+  border: 1px solid @Grey_200;
+}
+.tpl-line-1{
+  position: relative;
+  &:hover{
+    box-shadow: 0 1px 6px 0px rgba(0,0,0,0.12),0 1px 6px 0px rgba(0,0,0,0.12);
+    z-index: 10;
+  }
+  span{
+    padding: 10px 16px;
+    line-height: 24px;
+  }
+}
+.tpl-line-input{
+  position: relative;
+  padding: 0 16px;
+  input{
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid @Grey_200;
+    padding: 8px 0;
+    line-height: 16px;
+    &:focus{
+      outline: none;
+      border-bottom: 2px solid @Teal_900;
+    }
+  }
+}
+.tpl-line-1 + .tpl-line-input{
+  margin-top: 24px;
+}
+.tpl-line-input + .tpl-line-input {
+  margin-top: 16px;
+}
+.tpl-line-button{
+  margin: 16px;
+  margin-top: 32px ;
+}
+
+/**/
+#comp_bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  //height: 8px;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.8s ;
+  transform: translate3d(0,0,0);
+  &:hover{
+    opacity: 1;
+    box-shadow: 0 1px 6px 0px rgba(0,0,0,0.12),0 1px 6px 0px rgba(0,0,0,0.12);
+    #comps{
+      display: block;
+    }
+    #compbar-space{
+      display: none;
+    }
+  }
+}
+#compbar-space{
+  height: 8px;
+}
+#comps{
+  display: none;
+}
+
+/****/
+#toolbar{
+  position: fixed;
+  width: 256px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  //height: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+
 
 // .block-1{
 //   position: relative;

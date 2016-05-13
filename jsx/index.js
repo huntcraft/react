@@ -1,6 +1,7 @@
 var App = React.createClass({
   render : function(){
     var pathname = this.props.location.pathname
+    console.log(pathname);
     return (
       <div>
         <div className="navbar navbar-default" >
@@ -9,6 +10,7 @@ var App = React.createClass({
               <li className={pathname === '/' ? "active" : ""}><IndexLink to="/">Home</IndexLink></li>
               <li className={pathname === '/about' ? "active" : ""}><Link to="/about">About</Link></li>
               <li className={pathname === '/inbox' ? "active" : ""}><Link to="/inbox">Inbox</Link></li>
+              <li className={pathname === '/ind' ? "active" : ""}><Link to="/ind">Inbox</Link></li>
             </ul>
           </div>
         </div>
@@ -57,6 +59,9 @@ var Dashboard = React.createClass({
 })
 
 var NotF = React.createClass({
+  componentWillMount : function () {
+    window.location.href = 'https://www.google.com'
+  },
   render : function () {
     return (
       <div className="container">404</div>
